@@ -12,7 +12,7 @@ export default function OurStory() {
            {/*Left Image*/}
              <div className="flex-1">
                <img
-                 src="https://api.builder.io/api/v1/image/assets/TEMP/31899052302bf0abd7ea100d70af2c50dc56a03f?width=822"
+                 src="\public\assets\buckle.jpg"
                  alt="Metal buckle component"
                  className="w-full h-[320px] md:w-[360px] md:h-[560px] lg:w-[clamp(260px,26vw,412px)] lg:h-auto xl:w-[412px] xl:h-[634px] object-cover rounded-[10px]"
                />
@@ -20,7 +20,7 @@ export default function OurStory() {
              {/* Right Image */}
              <div className="flex-1">
                <img
-                 src="https://api.builder.io/api/v1/image/assets/TEMP/c47f1f8179c6bb4b619070959fad22773d1523d4?width=824"
+                 src="\public\assets\button.jpg"
                  alt="Metal button component"
                  className="w-full h-[320px] md:w-[360px] md:h-[560px] lg:w-[clamp(260px,26vw,412px)] lg:h-auto xl:w-[412px] xl:h-[634px] object-cover rounded-[10px]"
                />
