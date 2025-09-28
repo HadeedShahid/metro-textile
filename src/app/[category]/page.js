@@ -80,7 +80,7 @@ const Category = async ({ params, searchParams }) => {
   const { category } = await params;
   const { h1, breadcrumbs } = getCategorySeoData(category);
   return (
-    <section>
+    <section className="space-y-6">
       <h1 className="font-semibold text-4xl">{h1}</h1>
       <div className="flex justify-between items-center">
         <Breadcrumbs items={breadcrumbs} />
