@@ -14,7 +14,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
@@ -25,10 +25,8 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 
-
-import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
-
+import Link from "next/link";
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 const Navbar = ({
   logo = {
@@ -115,85 +113,80 @@ const Navbar = ({
 }) => {
   return (
     <section className="py-4">
-        {/* Desktop Menu */}
-        <nav className="hidden justify-between items-center md:flex">
-          <div className="flex gap-10">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <Image
-                src={logo.src}
-                width={64}
-                height={62}
-                alt={logo.alt}
-              />
-            </a>
-              <NavigationMenu viewport={false}>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-          </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu */}
-        <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <img
-                src={logo.src}
-                className="max-h-8 dark:invert"
-                alt={logo.alt}
-              />
-            </a>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
-                      <img
-                        src={logo.src}
-                        className="max-h-8 dark:invert"
-                        alt={logo.alt}
-                      />
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-6 p-4">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="flex w-full flex-col gap-4"
-                  >
-                    {menu.map((item) => renderMobileMenuItem(item))}
-                  </Accordion>
-
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+      {/* Desktop Menu */}
+      <nav className="hidden justify-between items-center md:flex">
+        <div className="flex gap-10">
+          {/* Logo */}
+          <a href={logo.url} className="flex items-center gap-2">
+            <Image src={logo.src} width={64} height={62} alt={logo.alt} />
+          </a>
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList>
+              {menu.map((item) => renderMenuItem(item))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
+        <div className="flex gap-2">
+          <Button asChild variant="outline" size="sm">
+            <a href={auth.login.url}>{auth.login.title}</a>
+          </Button>
+          <Button asChild size="sm">
+            <a href={auth.signup.url}>{auth.signup.title}</a>
+          </Button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div className="block lg:hidden">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <a href={logo.url} className="flex items-center gap-2">
+            <img
+              src={logo.src}
+              className="max-h-8 dark:invert"
+              alt={logo.alt}
+            />
+          </a>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="size-4" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="overflow-y-auto">
+              <SheetHeader>
+                <SheetTitle>
+                  <a href={logo.url} className="flex items-center gap-2">
+                    <img
+                      src={logo.src}
+                      className="max-h-8 dark:invert"
+                      alt={logo.alt}
+                    />
+                  </a>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-6 p-4">
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="flex w-full flex-col gap-4"
+                >
+                  {menu.map((item) => renderMobileMenuItem(item))}
+                </Accordion>
+
+                <div className="flex flex-col gap-3">
+                  <Button asChild variant="outline">
+                    <a href={auth.login.url}>{auth.login.title}</a>
+                  </Button>
+                  <Button asChild>
+                    <a href={auth.signup.url}>{auth.signup.title}</a>
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
     </section>
   );
 };
@@ -268,9 +261,7 @@ const SubMenuLink = ({ item }) => {
   );
 };
 
-
-
-const components= [
+const components = [
   {
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
@@ -306,7 +297,7 @@ const components= [
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
-]
+];
 
 export function NavigationMenuDemo() {
   return (
@@ -444,15 +435,10 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}) {
+function ListItem({ title, children, href, ...props }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
@@ -464,8 +450,7 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }
 
-
-export default Navbar
+export default Navbar;
