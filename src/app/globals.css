@@ -3,9 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
-
-.breakout { margin:0 calc(50% - 50vw); }
+.breakout {
+  margin: 0 calc(50% - 50vw);
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -121,4 +121,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }

@@ -18,6 +18,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  ArrowDownUp,
+  ArrowsUpFromLineIcon,
+  Filter,
+  FilterIcon,
+} from "lucide-react";
 
 const statuses = [
   {
@@ -52,7 +58,13 @@ export function Select() {
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button variant="outline" className="w-[150px] justify-start">
-            {selectedStatus ? <>{selectedStatus.label}</> : <>+ Set status</>}
+            {selectedStatus ? (
+              <>{selectedStatus.label}</>
+            ) : (
+              <>
+                <ArrowDownUp /> Sort by
+              </>
+            )}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-[200px] p-0" align="start">
