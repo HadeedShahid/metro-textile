@@ -1,9 +1,30 @@
-import React from 'react'
+import React from "react";
+
+const galleryImages = [
+  {
+    src: "/sample.jpg",
+    alt: "Modern architecture building",
+  },
+  {
+    src: "/sample.jpg",
+    alt: "Interior design living room",
+  },
+  {
+    src: "/sample.jpg",
+    alt: "Minimalist bedroom",
+  },
+  {
+    src: "/sample.jpg",
+    alt: "Contemporary kitchen",
+  },
+  {
+    src: "/sample.jpg",
+    alt: "Outdoor patio",
+  },
+];
 
 const Detail = () => {
-  return (
-    <div>Detail</div>
-  )
-}
+  return <section></section>;
+};
 
-export default Detail
+export default Detail;
