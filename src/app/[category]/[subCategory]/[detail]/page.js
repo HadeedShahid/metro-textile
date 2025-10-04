@@ -1,3 +1,4 @@
+import GalleryGrid from "@/components/common/imageGallery";
 import React from "react";
 
 const galleryImages = [
@@ -24,7 +25,11 @@ const galleryImages = [
 ];
 
 const Detail = () => {
-  return <section></section>;
+  return (
+    <section>
+      <GalleryGrid />
+    </section>
+  );
 };
 
 export default Detail;
