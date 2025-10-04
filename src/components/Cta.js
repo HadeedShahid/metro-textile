@@ -4,9 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 
 const Cta = () => {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white py-12">
       <div className="relative flex flex-col md:flex-row items-start justify-between">
-        {/* Logo (optional left) */}
+        {/* Logo  */}
         <div className="py-4 md:pr-8">
           <Image src="/logo.png" width={80} height={80} alt="logo-image" />
         </div>
@@ -50,8 +50,8 @@ const Cta = () => {
 
               {/* CTA Button */}
               <div className="flex md:justify-end md:items-end ">
-                <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white hover:bg-white hover:text-black transition-all duration-300">
-                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <button className="border border-white py-4 px-4 rounded-full transition-all ease-in-out duration-300 hover:bg-white hover:text-black cursor-pointer ">
+                  <ArrowUpRight />
                 </button>
               </div>
             </div>
