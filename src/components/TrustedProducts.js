@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { IconArrowNarrowRight, IconArrowUpRight } from "@tabler/icons-react";
+
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 const TrustedProducts = () => {
   // card data for card 1 & card 2
@@ -51,8 +52,8 @@ const TrustedProducts = () => {
               className="w-full h-auto object-contain"
             />
             <div className="flex w-full justify-end">
-              <button className="border border-[#7F2F82] py-1 px-6 rounded-full">
-                <IconArrowNarrowRight stroke={2} className="text-[#7F2F82]" />
+              <button className="group border border-[#7F2F82] py-1 px-6 rounded-full transition-all ease-in-out duration-300 hover:bg-[#7f2f82] hover:text-white cursor-pointer flex items-center justify-center">
+                <ArrowRight className="text-[#7F2F82] group-hover:text-white" />
               </button>
             </div>
           </div>
@@ -64,8 +65,8 @@ const TrustedProducts = () => {
             Take a look on all accessories
           </h5>
           <div className="flex w-full justify-end">
-            <button className="border border-white py-4 px-4 rounded-full">
-              <IconArrowUpRight stroke={2} className="text-white" />
+            <button className="group border border-white py-4 px-4 rounded-full transition-all ease-in-out duration-300  hover:bg-white cursor-pointer ">
+              <ArrowUpRight className="text-white group-hover:text-black" />
             </button>
           </div>
         </div>
