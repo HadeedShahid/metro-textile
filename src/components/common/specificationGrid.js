@@ -16,7 +16,7 @@ function SpecificationGrid({ title = "Specifications", data = sampleData }) {
   const columns = [data.slice(0, mid), data.slice(mid)];
 
   return (
-    <div id="product-details" className="flex flex-col ">
+    <div id="product-details" className="flex flex-col w-full">
       <h2 className="text-lg font-semibold mb-4">{title}</h2>
 
       <div className={cn("grid gap-6 text-xs md:text-sm md:grid-cols-2")}>

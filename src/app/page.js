@@ -11,7 +11,6 @@ export default function Home() {
       <TrustedProducts />
       <OurClient />
       <Cta />
-      <Footer />
     </>
   );
 }
