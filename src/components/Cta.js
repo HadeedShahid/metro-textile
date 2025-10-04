@@ -37,7 +37,7 @@ const Cta = () => {
             </div>
 
             {/* Middle content */}
-            <div className="flex  md:flex-row justify-between items-end md:items-end gap-6">
+            <div className="flex  md:flex-row justify-between items-end md:items-end gap-8">
               <div className="flex flex-col text-left">
                 <h1 className="text-3xl sm:text-5xl lg:text-8xl font-medium mb-3 leading-tight">
                   METRO METALS
@@ -50,8 +50,16 @@ const Cta = () => {
 
               {/* CTA Button */}
               <div className="flex md:justify-end md:items-end ">
-                <button className="border border-white py-4 px-4 rounded-full transition-all ease-in-out duration-300 hover:bg-white hover:text-black cursor-pointer ">
-                  <ArrowUpRight />
+                <button
+                  className="group border border-white 
+    py-2 px-2 sm:py-3 sm:px-3 md:py-4 md:px-4 
+    rounded-full transition-all ease-in-out duration-300  
+    hover:bg-white cursor-pointer"
+                >
+                  <ArrowUpRight
+                    className="text-white group-hover:text-black 
+      w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  />
                 </button>
               </div>
             </div>
