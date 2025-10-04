@@ -125,7 +125,7 @@ const Category = async ({ params, searchParams }) => {
   return (
     <section className="space-y-6">
       <h1 className="font-semibold text-4xl">{h1}</h1>
-      <div className="flex gap-4 w-full overflow-x-scroll no-scrollbar">
+      <div className="flex gap-4 w-full overflow-x-scroll hide-scrollbar">
         {linksData.map(({ label, href, title, value }) => (
           <Button
             key={label}

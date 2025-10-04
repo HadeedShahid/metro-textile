@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/common/breadcrumbs";
 import GalleryGrid from "@/components/common/imageGallery";
 import React from "react";
 
@@ -27,6 +28,14 @@ const galleryImages = [
 const Detail = () => {
   return (
     <section>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Components", href: "/components" },
+          { label: "Breadcrumb" },
+        ]}
+      />
+      <h1 className="font-semibold text-4xl">Yellow Metal Button</h1>
       <GalleryGrid />
     </section>
   );

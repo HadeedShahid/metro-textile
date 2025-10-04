@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 const images = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    src: "/sample.jpg",
     alt: "Mountain landscape",
   },
   {
@@ -93,7 +93,7 @@ export default function GalleryGrid() {
     <div className="min-h-screen">
       <div className="w-full">
         {/* CSS Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] md:grid-rows-2 gap-4 h-[400px] md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] md:grid-rows-2 gap-4 h-[400px] md:h-[500px]">
           {/* Main Image */}
           <div
             className="relative md:row-span-2 rounded-lg overflow-hidden cursor-pointer group border border-white/10"

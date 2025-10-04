@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={font.className}>
       <body>
-        <section className="container mx-auto px-4 md:px-0">
+        <section className="main-container mx-auto">
           <Navbar />
           {children}
         </section>
