@@ -5,16 +5,16 @@ import { Button } from "./ui/button";
 const Hero = () => {
   return (
     <section className="py-8 md:py-12">
-      <div className="flex w-full h-[400px] sm:h-[450px] md:h-[500px] rounded-2xl overflow-hidden">
+      <div className="flex w-full h-[400px] sm:h-[450px] md:h-[600px] rounded-2xl overflow-hidden">
         <div className="flex w-full h-full items-center justify-center">
           {/* Overlay layer */}
           <div className="relative w-full h-full flex items-center justify-center bg-black/40">
             {/* Background image */}
             <Image
-              src="/assets/hero.png"
+              src="/assets/hero2.jpg"
               alt="hero-img"
               width={1400}
-              height={500}
+              height={800}
               priority
               className="w-full h-full object-cover"
             />
@@ -33,7 +33,7 @@ const Hero = () => {
                 <Button className="bg-[#7F2F82] hover:bg-[#7f2f82] transition-all hover:scale-105 duration-300 ease-in-out">
                   Explore Products
                 </Button>
-                <Button className="bg-transparent border border-white hover:bg-white hover:text-black transition-all hover:scale-105 duration-300 ease-in-out">
+                <Button className="bg-transparent  hover:bg-white hover:text-black transition-all hover:scale-105 duration-300 ease-in-out">
                   Request a Quote
                 </Button>
               </div>
