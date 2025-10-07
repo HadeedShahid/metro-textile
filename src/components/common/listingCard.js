@@ -8,12 +8,14 @@ import {
   ExternalLink,
   Phone,
   Mail,
+  MailIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Call from "./call";
 import Email from "./email";
 import Whatsapp from "./whatsapp";
+import { IconBrandWhatsapp, IconExclamationCircle } from "@tabler/icons-react";
 
 export default function ProductCard({
   name,
@@ -74,9 +76,31 @@ export default function ProductCard({
           </h3>
 
           <div className="flex gap-2 w-full">
-            <Call className="flex-1" />
+            <Button
+              size={"icon"}
+              href={`tel:+1234567890`}
+              className={"bg-[#e9f7f0]"}
+            >
+              <MailIcon className="text-[#249f62] !size-5 " />
+            </Button>
+            <Button
+              size={"icon"}
+              href={`tel:+1234567890`}
+              className={"bg-[#e9f7f0]"}
+            >
+              <IconBrandWhatsapp className="text-[#249f62] !size-5" />
+            </Button>
+            <Button
+              size={"icon"}
+              href={`tel:+1234567890`}
+              className={"bg-[#e9f7f0]"}
+            >
+              <Phone className="text-[#249f62] !size-5" />
+            </Button>
+
+            {/* <Call className="flex-1" />
             <Email className="flex-1" />
-            <Whatsapp />
+            <Whatsapp /> */}
             <Button variant={"outline"} className={"mr-0 ml-auto"}>
               <ExternalLink className="h-3 w-3 " />
             </Button>
