@@ -90,7 +90,7 @@ export default function GalleryGrid() {
   }, [emblaApi, isOpen, selectedIndex]);
 
   return (
-    <div className="min-h-screen">
+    <div>
       <div className="w-full">
         {/* CSS Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] md:grid-rows-2 gap-4 h-[400px] md:h-[500px]">
