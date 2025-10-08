@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 const Hero = () => {
   return (
     <section className="py-8 md:py-12">
-      <div className="flex w-full h-[400px] sm:h-[450px] md:h-[600px] rounded-2xl overflow-hidden">
+      <div className="flex w-full h-[400px] sm:h-[550px] md:h-[650px] rounded-2xl overflow-hidden">
         <div className="flex w-full h-full items-center justify-center">
           {/* Overlay layer */}
           <div className="relative w-full h-full flex items-center justify-center bg-black/40">
@@ -16,7 +16,7 @@ const Hero = () => {
               width={1400}
               height={800}
               priority
-              className="w-full h-full object-cover"
+              className="w-full h-full object-fill"
             />
 
             {/* Content */}
