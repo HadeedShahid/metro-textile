@@ -11,6 +11,7 @@ import React from "react";
 import { products } from "../page";
 import ProductCard from "@/components/common/listingCard";
 import OurClient from "@/components/OurClient";
+import KeyFeatures from "@/components/common/KeyFeatures";
 
 const galleryImages = [
   {
@@ -60,6 +61,10 @@ const Detail = () => {
               <Whatsapp />
             </Card>
           </div>
+        </div>
+        {/* key features div */}
+        <div>
+          <KeyFeatures />
         </div>
         <section className="flex flex-col gap-4">
           <h2 className="font-semibold text-4xl">Explore Similar Products</h2>
