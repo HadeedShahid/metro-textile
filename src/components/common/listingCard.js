@@ -80,7 +80,7 @@ export default function ProductCard({
               size={"lg"}
               href={`tel:+1234567890`}
               className={
-                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#d7bfd8]/50 hover:border-[#c49fc6]"
+                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#f2eaf3]/50 hover:border-[#c49fc6]"
               }
             >
               <MailIcon className="text-[#7f2f82] !size-5 " /> Email
@@ -89,7 +89,7 @@ export default function ProductCard({
               size={"lg"}
               href={`tel:+1234567890`}
               className={
-                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#d7bfd8]/50  hover:border-[#c49fc6]"
+                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#f2eaf3]/50  hover:border-[#c49fc6]"
               }
             >
               <Phone className="text-[#7f2f82] !size-5" /> Phone
@@ -98,7 +98,7 @@ export default function ProductCard({
               size={"icon"}
               href={`tel:+1234567890`}
               className={
-                "border bg-[#e9f7f0] hover:bg-[#d4fce2] hover:border-[#a1e4b8]"
+                "border bg-[#e9f7f0] hover:bg-[#e9f7f0]/50 hover:border-[#a1e4b8]"
               }
             >
               <IconBrandWhatsapp className="text-[#249f62] !size-5" />
