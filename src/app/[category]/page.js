@@ -7,13 +7,13 @@ import React from "react";
 
 const getCategorySeoData = (category) => {
   switch (category) {
-    case "buttons":
+    case "products":
       return {
-        h1: "Shop Buttons Online – Metal, Plastic & More",
+        h1: "Products",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Components", href: "/components" },
-          { label: "Breadcrumb" },
+          { label: "All Products", href: "/products" },
+          // { label: "Buttons" },
         ],
       };
       break;
@@ -80,6 +80,12 @@ const products = [
 
 const linksData = [
   {
+    label: "All Products",
+    href: "/products",
+    title: "Products",
+    value: "products",
+  },
+  {
     label: "Buttons",
     href: "/buttons",
     title: "Buttons for sale",
@@ -124,7 +130,7 @@ const Category = async ({ params, searchParams }) => {
   const { h1, breadcrumbs } = getCategorySeoData(category);
   return (
     <section className="space-y-6">
-      <h1 className="font-semibold text-4xl">{h1}</h1>
+      <h1 className="font-semibold text-9xl py-6">{h1}</h1>
       <div className="flex gap-4 w-full overflow-x-scroll hide-scrollbar">
         {linksData.map(({ label, href, title, value }) => (
           <Button
