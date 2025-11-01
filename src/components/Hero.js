@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="py-8 md:py-12">
-      <div className="flex w-full h-[400px] sm:h-[550px] md:h-[650px] rounded-2xl overflow-hidden">
+    <section className=" py-8 md:py-12">
+      <div className=" flex w-full h-[400px] sm:h-[550px] md:h-[650px] rounded-2xl overflow-hidden">
         <div className="flex w-full h-full items-center justify-center">
           {/* Overlay layer */}
-          <div className="relative w-full h-full flex items-center justify-center bg-black/40">
+          <div className=" w-full h-full flex items-center justify-center bg-black/40">
             {/* Background image */}
             <Image
               src="/assets/hero2.jpg"
@@ -30,10 +31,12 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mt-8 md:mt-12">
-                <Button className="bg-[#7F2F82] hover:bg-[#7f2f82] transition-all hover:scale-105 duration-300 ease-in-out">
-                  Explore Products
-                </Button>
-                <Button className="bg-transparent  hover:bg-white hover:text-black transition-all hover:scale-105 duration-300 ease-in-out">
+                <Link href="/products">
+                  <Button className="cursor-pointer bg-[#7F2F82] hover:bg-[#7f2f82] transition-all hover:scale-105 duration-300 ease-in-out">
+                    Explore Products
+                  </Button>
+                </Link>
+                <Button className="cursor-pointer bg-transparent  hover:bg-white hover:text-black transition-all hover:scale-105 duration-300 ease-in-out">
                   Request a Quote
                 </Button>
               </div>

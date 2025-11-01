@@ -1,4 +1,15 @@
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import {
+  Award,
+  Book,
+  CircleDot,
+  GripVertical,
+  Link2,
+  Menu,
+  Square,
+  Sunset,
+  Trees,
+  Zap,
+} from "lucide-react";
 
 import {
   Accordion,
@@ -30,85 +41,91 @@ import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 const Navbar = ({
   logo = {
-    url: "/logo.png",
+    url: "/",
     src: "/logo.png",
     alt: "logo",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
       title: "Products",
-      url: "#",
+      url: "/products",
       items: [
         {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
+          title: "Buttons",
+          description: "Durable and stylish buttons crafted for perfection",
+          icon: <CircleDot className="size-5 shrink-0" />,
+          url: "/buttons",
         },
         {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Support",
+          title: "Zippers",
           description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
+            "Smooth-running zippers built for strength and precision",
+          icon: <GripVertical className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Buckles",
+          description: "Premium metal buckles that lock design with durability",
+          icon: <Link2 className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Plates",
+          description: "Engraved metal plates for bold and lasting impressions",
+          icon: <Square className="size-5 shrink-0" />,
+          url: "#",
+        },
+        {
+          title: "Badges",
+          description: "Custom metal badges that define brand identity",
+          icon: <Award className="size-5 shrink-0" />,
           url: "#",
         },
       ],
     },
     {
-      title: "Resources",
-      url: "#",
-      items: [
-        {
-          title: "Help Center",
-          description: "Get all the answers you need right here",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Status",
-          description: "Check the current status of our services and APIs",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
+      title: "About Us",
+      url: "/about-us",
+      // items: [
+      //   {
+      //     title: "Help Center",
+      //     description: "Get all the answers you need right here",
+      //     icon: <Zap className="size-5 shrink-0" />,
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Contact Us",
+      //     description: "We are here to help you with any questions you have",
+      //     icon: <Sunset className="size-5 shrink-0" />,
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Status",
+      //     description: "Check the current status of our services and APIs",
+      //     icon: <Trees className="size-5 shrink-0" />,
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Terms of Service",
+      //     description: "Our terms and conditions for using our services",
+      //     icon: <Book className="size-5 shrink-0" />,
+      //     url: "#",
+      //   },
+      // ],
     },
     {
-      title: "Pricing",
-      url: "#",
+      title: "Contact",
+      url: "/contact",
     },
-    {
-      title: "Blog",
-      url: "#",
-    },
+    // {
+    //   title: "Blog",
+    //   url: "#",
+    // },
   ],
   auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
+    login: { title: "Login", url: "/login" },
+    signup: { title: "Sign up", url: "/signup" },
   },
 }) => {
   return (
@@ -198,7 +215,7 @@ const renderMenuItem = (item) => {
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent className="bg-popover text-popover-foreground">
           {item.items.map((subItem) => (
-            <NavigationMenuLink asChild key={subItem.title} className="w-80">
+            <NavigationMenuLink asChild key={subItem.title} className="w-80  ">
               <SubMenuLink item={subItem} />
             </NavigationMenuLink>
           ))}
