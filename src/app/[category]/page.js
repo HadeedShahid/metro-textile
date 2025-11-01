@@ -17,6 +17,56 @@ const getCategorySeoData = (category) => {
         ],
       };
       break;
+    case "buttons":
+      return {
+        h1: "Buttons",
+        breadcrumbs: [
+          { label: "Home", href: "/buttons" },
+          { label: "Buttons", href: "/buttons" },
+          // { label: "Buttons" },
+        ],
+      };
+      break;
+    case "zippers":
+      return {
+        h1: "Zippers",
+        breadcrumbs: [
+          { label: "Home", href: "/zippers" },
+          { label: "Zippers", href: "/zippers" },
+          // { label: "Buttons" },
+        ],
+      };
+      break;
+    case "buckles":
+      return {
+        h1: "Buckles",
+        breadcrumbs: [
+          { label: "Home", href: "/buckles" },
+          { label: "Buckles", href: "/buckles" },
+          // { label: "Buttons" },
+        ],
+      };
+      break;
+    case "badges":
+      return {
+        h1: "Badges",
+        breadcrumbs: [
+          { label: "Home", href: "/badges" },
+          { label: "Badges", href: "/badges" },
+          // { label: "Buttons" },
+        ],
+      };
+      break;
+    case "plates":
+      return {
+        h1: "Plates",
+        breadcrumbs: [
+          { label: "Home", href: "/" },
+          { label: "Plates", href: "/products" },
+          // { label: "Buttons" },
+        ],
+      };
+      break;
 
     default:
       break;
@@ -98,30 +148,23 @@ const linksData = [
     value: "zippers",
   },
   {
-    label: "Rivets",
-    href: "/rivets",
-    title: "Rivets for sale",
-    value: "rivets",
-  },
-  {
     label: "Buckles",
     href: "/buckles",
     title: "Buckles for sale",
     value: "buckles",
   },
-  { label: "Snaps", href: "/snaps", title: "Snaps for sale", value: "snaps" },
-  { label: "Hooks", href: "/hooks", title: "Hooks for sale", value: "hooks" },
+
   {
-    label: "Clasps",
-    href: "/clasps",
-    title: "Clasps for sale",
-    value: "clasps",
+    label: "Badges",
+    href: "/badges",
+    title: "Badges for sale",
+    value: "badges",
   },
   {
-    label: "Eyelets",
-    href: "/eyelets",
-    title: "Eyelets for sale",
-    value: "eyelets",
+    label: "Plates",
+    href: "/plates",
+    title: "Plates for sale",
+    value: "plates",
   },
 ];
 
