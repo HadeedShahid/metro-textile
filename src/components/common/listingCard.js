@@ -77,25 +77,31 @@ export default function ProductCard({
 
           <div className="flex gap-2 w-full">
             <Button
-              size={"icon"}
+              size={"lg"}
               href={`tel:+1234567890`}
-              className={"bg-[#e9f7f0]"}
+              className={
+                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#f2eaf3]/50 hover:border-[#c49fc6]"
+              }
             >
-              <MailIcon className="text-[#249f62] !size-5 " />
+              <MailIcon className="text-[#7f2f82] !size-5 " /> Email
+            </Button>
+            <Button
+              size={"lg"}
+              href={`tel:+1234567890`}
+              className={
+                "border bg-[#f2eaf3] text-[#742b76] hover:bg-[#f2eaf3]/50  hover:border-[#c49fc6]"
+              }
+            >
+              <Phone className="text-[#7f2f82] !size-5" /> Phone
             </Button>
             <Button
               size={"icon"}
               href={`tel:+1234567890`}
-              className={"bg-[#e9f7f0]"}
+              className={
+                "border bg-[#e9f7f0] hover:bg-[#e9f7f0]/50 hover:border-[#a1e4b8]"
+              }
             >
               <IconBrandWhatsapp className="text-[#249f62] !size-5" />
-            </Button>
-            <Button
-              size={"icon"}
-              href={`tel:+1234567890`}
-              className={"bg-[#e9f7f0]"}
-            >
-              <Phone className="text-[#249f62] !size-5" />
             </Button>
 
             {/* <Call className="flex-1" />
