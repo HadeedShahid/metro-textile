@@ -1,141 +1,43 @@
+import {
+  getCategoryById,
+  getSubcategoryById,
+  getProductsBySubcategory,
+} from "@/utils";
 import Breadcrumbs from "@/components/common/breadcrumbs";
-import Listings from "@/components/common/listings";
-import { Select } from "@/components/common/select";
 import SortBy from "@/components/common/sortby";
+import Listings from "@/components/common/listings";
 import { Button } from "@/components/ui/button";
-import React from "react";
 
-const getCategorySeoData = (category) => {
-  switch (category) {
-    case "buttons":
-      return {
-        h1: "Shop Buttons Online – Metal, Plastic & More",
-        breadcrumbs: [
-          { label: "Home", href: "/" },
-          { label: "Components", href: "/components" },
-          { label: "Breadcrumb" },
-        ],
-      };
-      break;
+export default async function SubcategoryPage({ params }) {
+  const { category, subCategory } = await params;
 
-    default:
-      break;
-  }
-};
+  const categoryData = getCategoryById(category);
+  const subcategoryData = getSubcategoryById(category, subCategory);
 
-export const products = [
-  {
-    id: "1",
-    name: "Premium Silver Metal Buttons",
-    category: "Metal Buttons",
-    image: "/sample.jpg",
-    badges: [{ label: "Popular", variant: "popular" }],
-    actions: [
-      { label: "Customize", variant: "outline" },
-      { label: "Quote", variant: "default" },
-    ],
-  },
-  {
-    id: "2",
-    name: "Industrial Grade Zippers",
-    category: "Zippers",
-    image: "/sample.jpg",
-    badges: [{ label: "Featured", variant: "featured" }],
-    actions: [
-      { label: "Specifications", variant: "outline" },
-      { label: "Sample", variant: "default" },
-    ],
-  },
-  {
-    id: "3",
-    name: "Copper Rivets & Grommets",
-    category: "Rivets",
-    image: "/sample.jpg",
-  },
-  {
-    id: "4",
-    name: "Brass Snap Fasteners",
-    category: "Snap Fasteners",
-    image: "/sample.jpg",
-    actions: [
-      { label: "Color Options", variant: "outline" },
-      { label: "Bulk Order", variant: "default" },
-    ],
-  },
-  {
-    id: "5",
-    name: "Antique Brass Buttons",
-    category: "Metal Buttons",
-    image: "/sample.jpg",
-    badges: [{ label: "Popular", variant: "popular" }],
-  },
-  {
-    id: "6",
-    name: "Heavy Duty Zippers",
-    category: "Zippers",
-    image: "/sample.jpg",
-    badges: [{ label: "Featured", variant: "featured" }],
-  },
-];
+  if (!categoryData || !subcategoryData)
+    return <div className="py-20 text-center">Subcategory not found.</div>;
 
-const linksData = [
-  {
-    label: "Buttons",
-    href: "/buttons",
-    title: "Buttons for sale",
-    value: "buttons",
-  },
-  {
-    label: "Zippers",
-    href: "/zippers",
-    title: "Zippers for sale",
-    value: "zippers",
-  },
-  {
-    label: "Rivets",
-    href: "/rivets",
-    title: "Rivets for sale",
-    value: "rivets",
-  },
-  {
-    label: "Buckles",
-    href: "/buckles",
-    title: "Buckles for sale",
-    value: "buckles",
-  },
-  { label: "Snaps", href: "/snaps", title: "Snaps for sale", value: "snaps" },
-  { label: "Hooks", href: "/hooks", title: "Hooks for sale", value: "hooks" },
-  {
-    label: "Clasps",
-    href: "/clasps",
-    title: "Clasps for sale",
-    value: "clasps",
-  },
-  {
-    label: "Eyelets",
-    href: "/eyelets",
-    title: "Eyelets for sale",
-    value: "eyelets",
-  },
-];
+  const products = getProductsBySubcategory(subCategory);
 
-const Category = async ({ params, searchParams }) => {
-  const { category } = await params;
-  const { h1, breadcrumbs } = getCategorySeoData(category);
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: categoryData.label, href: categoryData.href },
+    { label: subcategoryData.label },
+  ];
+
   return (
     <section className="space-y-6">
-      <h1 className="font-semibold text-4xl">{h1}</h1>
+      <h1 className="font-semibold text-9xl py-6">{subcategoryData.label}</h1>
       <div className="flex gap-4 w-full overflow-x-scroll hide-scrollbar">
-        {linksData.map(({ label, href, title, value }) => (
+        {categoryData.subcategories?.map((sub) => (
           <Button
-            key={label}
-            href={href}
-            variant={value === category ? "default" : "outline"}
-            className={"p-4 rounded-full"}
-            title={title}
+            key={sub.id}
+            href={sub.href}
+            variant={sub.id === subCategory ? "default" : "outline"}
+            className="p-4 rounded-full"
             size="sm"
           >
-            {label}
+            {sub.label}
           </Button>
         ))}
       </div>
@@ -146,6 +48,4 @@ const Category = async ({ params, searchParams }) => {
       <Listings items={products}></Listings>
     </section>
   );
-};
-
-export default Category;
+}

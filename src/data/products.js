@@ -1,0 +1,42 @@
+export const products = [
+  {
+    id: "1",
+    name: "Premium Silver Metal Buttons",
+    category: "buttons",
+    subCategory: "shank-buttons",
+    image: "/sample.jpg",
+    badges: ["popular"],
+    actions: ["customize", "quote"],
+  },
+  {
+    id: "2",
+    name: "Industrial Grade Zippers",
+    category: "zippers",
+    subCategory: "plastic-zippers",
+    image: "/sample.jpg",
+    badges: ["featured"],
+  },
+  {
+    id: "3",
+    name: "Copper Rivets & Grommets",
+    category: "rivets",
+    subCategory: "copper-rivets",
+    image: "/sample.jpg",
+  },
+  {
+    id: "4",
+    name: "Antique Brass Buttons",
+    category: "buttons",
+    subCategory: "metal-buttons",
+    image: "/sample.jpg",
+    badges: ["popular"],
+  },
+  {
+    id: "5",
+    name: "Heavy Duty Metal Zippers",
+    category: "zippers",
+    subCategory: "metal-zippers",
+    image: "/sample.jpg",
+    badges: ["featured"],
+  },
+];
