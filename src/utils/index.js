@@ -13,3 +13,11 @@ export function getSubcategoryById(categoryId, subId) {
 export function getProductsBySubcategory(subcategoryId) {
   return products.filter((p) => p.subCategory === subcategoryId);
 }
+
+export function getProductBySlug(slug) {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getProductsByCategory(categoryId) {
+  return products.filter((p) => p.category === categoryId);
+}

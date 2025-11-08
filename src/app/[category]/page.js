@@ -5,8 +5,8 @@ import SortBy from "@/components/common/sortby";
 import { Button } from "@/components/ui/button";
 import Listings from "@/components/common/listings";
 
-export default function CategoryPage({ params }) {
-  const { category } = params;
+export default async function CategoryPage({ params }) {
+  const { category } = await params;
 
   const categoryData = categories.find((c) => c.id === category);
 

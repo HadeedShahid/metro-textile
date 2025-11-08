@@ -16,6 +16,7 @@ import Call from "./call";
 import Email from "./email";
 import Whatsapp from "./whatsapp";
 import { IconBrandWhatsapp, IconExclamationCircle } from "@tabler/icons-react";
+import { getCategoryById } from "@/utils";
 
 export default function ProductCard({
   name,
@@ -24,6 +25,8 @@ export default function ProductCard({
   badges = [],
   href = "#",
 }) {
+  const categoryData = getCategoryById(category);
+  const categoryLabel = categoryData?.label || category;
   return (
     <Link href={href}>
       <Card className="group overflow-hidden shadow-card hover:shadow-card-hover transition-smooth py-0 gap-0">
@@ -40,11 +43,19 @@ export default function ProductCard({
 
           {badges.length > 0 && (
             <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-              {badges.map((badge, index) => (
-                <Badge key={index} variant={badge.variant}>
-                  {badge.label}
-                </Badge>
-              ))}
+              {badges.map((badge, index) => {
+                const badgeVariant =
+                  typeof badge === "string" ? badge : badge.variant;
+                const badgeLabel =
+                  typeof badge === "string"
+                    ? badge.charAt(0).toUpperCase() + badge.slice(1)
+                    : badge.label;
+                return (
+                  <Badge key={index} variant={badgeVariant}>
+                    {badgeLabel}
+                  </Badge>
+                );
+              })}
             </div>
           )}
 
@@ -68,7 +79,7 @@ export default function ProductCard({
 
         <CardContent className="p-4 space-y-3">
           <Badge variant="category" className="text-xs">
-            {category}
+            {categoryLabel}
           </Badge>
 
           <h3 className="font-semibold text-metal-primary group-hover:text-metal-secondary transition-colors">

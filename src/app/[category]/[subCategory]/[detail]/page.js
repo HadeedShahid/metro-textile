@@ -11,42 +11,41 @@ import { products } from "@/data/products";
 import ProductCard from "@/components/common/listingCard";
 import OurClient from "@/components/OurClient";
 import KeyFeatures from "@/components/common/KeyFeatures";
+import {
+  getCategoryById,
+  getSubcategoryById,
+  getProductBySlug,
+  getProductsBySubcategory,
+} from "@/utils";
 
-const galleryImages = [
-  {
-    src: "/sample.jpg",
-    alt: "Modern architecture building",
-  },
-  {
-    src: "/sample.jpg",
-    alt: "Interior design living room",
-  },
-  {
-    src: "/sample.jpg",
-    alt: "Minimalist bedroom",
-  },
-  {
-    src: "/sample.jpg",
-    alt: "Contemporary kitchen",
-  },
-  {
-    src: "/sample.jpg",
-    alt: "Outdoor patio",
-  },
-];
+export default async function DetailPage({ params }) {
+  const { category, subCategory, detail } = await params;
 
-const Detail = () => {
+  const categoryData = getCategoryById(category);
+  const subcategoryData = getSubcategoryById(category, subCategory);
+  const product = getProductBySlug(detail);
+
+  if (!categoryData || !subcategoryData || !product) {
+    return <div className="py-20 text-center">Product not found.</div>;
+  }
+
+  // Get similar products from the same subcategory
+  const similarProducts = getProductsBySubcategory(subCategory).filter(
+    (p) => p.id !== product.id
+  );
+
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: categoryData.label, href: categoryData.href },
+    { label: subcategoryData.label, href: subcategoryData.href },
+    { label: product.name },
+  ];
+
   return (
     <>
       <section className="pb-22">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Components", href: "/components" },
-            { label: "Breadcrumb" },
-          ]}
-        />
-        <h1 className="font-semibold text-4xl">Yellow Metal Button</h1>
+        <Breadcrumbs items={breadcrumbs} />
+        <h1 className="font-semibold text-4xl">{product.name}</h1>
         <GalleryGrid />
         <div className="grid md:grid-cols-3 gap-2">
           <div className="col-span-2 md:pr-12">
@@ -65,14 +64,16 @@ const Detail = () => {
         <div>
           <KeyFeatures />
         </div>
-        <section className="flex flex-col gap-4">
-          <h2 className="font-semibold text-4xl">Explore Similar Products</h2>
-          <div className="flex gap-4 overflow-scroll hide-scrollbar">
-            {products.map((item, index) => (
-              <ProductCard key={index} {...item} />
-            ))}
-          </div>
-        </section>
+        {similarProducts.length > 0 && (
+          <section className="flex flex-col gap-4">
+            <h2 className="font-semibold text-4xl">Explore Similar Products</h2>
+            <div className="flex gap-4 overflow-scroll hide-scrollbar">
+              {similarProducts.map((item, index) => (
+                <ProductCard key={index} {...item} />
+              ))}
+            </div>
+          </section>
+        )}
         <OurClient />
         <Cta />
       </section>
@@ -83,6 +84,4 @@ const Detail = () => {
       </div>
     </>
   );
-};
-
-export default Detail;
+}

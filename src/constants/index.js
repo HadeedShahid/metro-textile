@@ -1,0 +1,3 @@
+const IMAGE_BASE_URL = process.env.NEXT_PUBLIC_VERCEL_BLOB_URL;
+
+export { IMAGE_BASE_URL };
