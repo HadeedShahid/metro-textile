@@ -45,4 +45,26 @@ export const categories = [
       },
     ],
   },
+  {
+    id: "buckles",
+    label: "Buckles",
+    href: "/buckles",
+    subcategories: [
+      {
+        id: "metal-buckles",
+        label: "Metal Buckles",
+        href: "/buckles/metal-buckles",
+      },
+      {
+        id: "plastic-buckles",
+        label: "Plastic Buckles",
+        href: "/buckles/plastic-buckles",
+      },
+      {
+        id: "belt-buckles",
+        label: "Belt Buckles",
+        href: "/buckles/belt-buckles",
+      },
+    ],
+  },
 ];
